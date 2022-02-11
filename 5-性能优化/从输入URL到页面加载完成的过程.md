@@ -11,6 +11,10 @@
    1. 检验新鲜通常有两个 HTTP 头进行控制`Expires`和`Cache-Control`：
       - HTTP1.0 提供 Expires，值为一个绝对时间表示缓存新鲜日期
       - HTTP1.1 增加了 Cache-Control: max-age=,值为以秒为单位的最大新鲜时间
+   2. 协商缓存
+    - 每次使用缓存之前先去后台确认一下
+    - `Last-Modified` `If-Modified-Since` 上次修改时间
+    - `Etag` `If-None-Match`
 4. 浏览器**解析 URL**获取协议，主机，端口，path
 5. 浏览器**组装一个 HTTP（GET）请求报文**
 6. **DNS 解析**，查找过程如下：

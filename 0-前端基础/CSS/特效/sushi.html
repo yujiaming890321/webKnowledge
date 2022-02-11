@@ -1,0 +1,58 @@
+<!--
+ * @Author: yujiaming
+ * @Date: 2021-08-31 16:47:18
+ * @LastEditTime: 2021-08-31 16:50:16
+ * @LastEditors: yujiaming
+-->
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<style>
+		.sushi {
+			margin: 100px;
+			width: 150px;
+			height: 150px;
+			background-image: url('https://www.kirupa.com/icon/1f363.svg');
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+
+		.colorfulShadow {
+			position: relative;
+		}
+
+		.colorfulShadow::after {
+			content: '';
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			background: inherit;
+			background-position: center center;
+			filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5)) blur(20px);
+			z-index: -1;
+
+			/* animation time! */
+			animation: oscillate 1s cubic-bezier(0.17, 0.67, 0.45, 1.32) infinite
+				alternate;
+		}
+
+		@keyframes oscillate {
+			from {
+				transform: scale(1, 1);
+			}
+
+			to {
+				transform: scale(1.3, 1.3);
+			}
+		}
+	</style>
+	<body>
+		<div class="parent">
+			<div class="colorfulShadow sushi"></div>
+		</div>
+	</body>
+</html>
